@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h1>Hyrje</h1>
+    <form method="POST" class="login-form">
+        <div class="form-group">
+            <label>Emri i përdoruesit</label>
+            <input type="text" name="username" required placeholder="Emri i përdoruesit...">
+        </div>
+        <div class="form-group">
+            <label>Fjalëkalimi</label>
+            <input type="password" name="password" required placeholder="Fjalëkalimi...">
+        </div>
+        <button type="submit" class="btn btn-primary">Hyr</button>
+    </form>
+    <p>Provoni: <strong>admin / 123</strong> (admin) ose <strong>Altin / 123</strong> (viewer)</p>
+</div>
+{% endblock %}
