@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file, make_response
 import io, csv
 from flask_sqlalchemy import SQLAlchemy
@@ -774,5 +775,6 @@ def export_department_pdf(dept_id):
         return send_file(buffer, as_attachment=True, attachment_filename=filename, mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
     
